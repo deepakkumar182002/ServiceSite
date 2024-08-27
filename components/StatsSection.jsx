@@ -39,11 +39,11 @@ const StatsSection = () => {
       <div className="pt-12 bg-gray-50 dark:bg-white sm:pt-20">
         <div className="max-w-screen-xl px-4 mx-auto sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl font-extrabold leading-9 text-gray-black text-black sm:text-4xl sm:leading-10">
+            <h2 className="text-3xl drop-shadow-lg font-extrabold leading-9 text-gray-black text-black sm:text-4xl sm:leading-10">
               Trusted by Customers
             </h2>
             <p className="mt-3 text-xl leading-7 text-gray-600 dark:text-gray-400 sm:mt-4">
-              This package powers many production applications on many different hosting platforms.
+              This Service one of the best for you. Because we try our best to fulfill the needs of the Customers.
             </p>
           </div>
         </div>

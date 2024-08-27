@@ -40,16 +40,16 @@ export default function Contactform() {
       <main className="bg-gray-100">
         <Navigation />
         
-        <div className="flex bg-gray-100 flex-row gap-4 justify-center my-4">
-          <div className="flex flex-col" >
+        <div className="bg-gray-100 flex flex-col md:flex-row justify-center gap-4 mx-auto">
+          <div className="w-full md:w-auto flex flex-col m-2" >
             <div className="header-text p-4 flex bg-gray-900 " >
               <span>
-                <h2 className="text-3xl font-bold text-white">Request Callback</h2>
-                <h6 className=" text-white">Fill out this form below!</h6>
+                <h2 className="md:text-3xl text-2xl ml-4 font-bold text-white">Request Callback</h2>
+                <h6 className=" text-white ml-4">Fill out this form below!</h6>
               </span>
 
             </div>
-            <form onSubmit={handleFormSubmit} className="flex flex-col align-items-center gap-3">
+            <form onSubmit={handleFormSubmit} className="grid grid-cols justify-center align-items-center gap-3">
               
               <input id="Username" type="Username" name="name" placeholder="Enter You Name" className="mt-2 p-2"
 
@@ -80,7 +80,7 @@ export default function Contactform() {
                 field="Phone"
                 errors={state.errors}
               />
-              <label htmlhtmlFor="course" className="text-muted text-start" >Service Interested*</label>
+              <label htmlFor="course" className="text-muted text-start md:ml-0 ml-2" >Service Interested*</label>
               <select name="course" id="course" className="p-2">
                 <option >Select Course</option>
                 <option value="Data Science">Cars Rental</option>
@@ -93,7 +93,7 @@ export default function Contactform() {
                 field="Course"
                 errors={state.errors}
               />
-              <label htmlhtmlFor="course" className="text-muted text-start ">Message</label>
+              <label htmlFor="course" className="text-muted text-start ">Message</label>
               <textarea
                 id="message"
                 name="message"
@@ -116,7 +116,7 @@ export default function Contactform() {
 
             </form>
           </div>
-          <Image src={tem12} alt="" className="h-[600px] w-[600px]" />
+          <Image src={tem12} alt="" className="h-[600px] m-2 w-[600px]" />
         </div>
       </main>
 
