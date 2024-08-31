@@ -1,20 +1,35 @@
+'use client'
 import React from 'react'
 import Image from 'next/image'
-// import temp3 from '../public/temp3.jpg'
-import temp from '../public/temp1.png'
 import temp4 from '../public/temp4.jpg'
 import temp6 from '../public/temp6.jpg'
 import temp7 from '../public/temp7.jpg'
-// import temp8 from '../public/temp8.jpg'
 import temp5 from '../public/temp5.jpg'
 import temp11 from '../public/temp11.jpg'
 import temp9 from '../public/temp9.jpg'
 import temp10 from '../public/temp10.jpg'
-// import temp14 from '../public/temp14.jpg'
 import StatsSection from './StatsSection'
-// import Footer from './Footer'
+import { useForm, ValidationError } from "@formspree/react";
 
 export default function Homepage() {
+    const [state, handleSubmit] = useForm("xblrwojo");
+
+    const handleFormSubmit = (event) => {
+        // Your custom form validation logic goes here
+        // For example, check if name, email, and message are not empty
+        if (!event.target.name.value || !event.target.email.value || !event.target.message.value) {
+            // Show an error message or handle the validation error
+            console.error("Please fill out all required fields");
+            return;
+        }
+
+        // If validation passes, proceed with the form submission
+        handleSubmit(event);
+    };
+
+    if (state.succeeded) {
+        return <p>Thanks for joining!</p>;
+    }
     return (
         <>
             <div className="flex items-center bg-fixed flex-col justify-center h-full">
@@ -27,58 +42,91 @@ export default function Homepage() {
                             <div className="md:text-2xl md:py-4 py-2 px-6 bg-gray-900 text-white text-start md:text-center font-bold uppercase">
                                 Book an Appointment
                             </div>
-                            <form className="py-4 px-6" action="" method="POST">
+                            <form onSubmit={handleFormSubmit} className="py-4 px-6" action="" method="POST">
                                 <div className="mb-4">
                                     <label className="block text-gray-700 font-bold mb-2" htmlFor="name">
-                                        Name
+                                        Name<span className='text-red-500'>*</span>
                                     </label>
-                                    <input
-                                        className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                                        id="name" type="text" placeholder="Enter your name" />
+                                    <input id="name" type="rname" name="name" placeholder="Enter You Name" className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required />
+                                    <ValidationError
+                                        prefix="Username"
+                                        field="name"
+                                        errors={state.errors}
+                                    />
                                 </div>
                                 <div className="mb-4">
                                     <label className="block text-gray-700 font-bold mb-2" htmlFor="email">
-                                        Email
+                                        Email<span className='text-red-500'>*</span>
                                     </label>
-                                    <input
+                                    <input id="email" type="email" name="email" placeholder="Enter Your Email"
                                         className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                                        id="email" type="email" placeholder="Enter your email" />
+                                        required
+                                    />
+                                    <ValidationError
+                                        prefix="Email"
+                                        field="email"
+                                        errors={state.errors}
+                                    />
                                 </div>
                                 <div className="mb-4">
-                                    <label className="block text-gray-700 font-bold mb-2" htmlFor="phone">
-                                        Phone Number
+                                    <label className="block text-gray-700 font-bold mb-2" htmlFor="Phone">
+                                        Phone Number <span className='text-red-500'>*</span>
                                     </label>
-                                    <input
+                                    <input id="Phone" name="Phone" placeholder="Enter Your Phone no."
+
                                         className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                                        id="phone" type="tel" placeholder="Enter your phone number" />
+                                        required
+                                    />
+                                    <ValidationError
+                                        prefix="Phone"
+                                        field="Phone"
+                                        errors={state.errors}
+                                    />
                                 </div>
 
                                 <div className="mb-4">
-                                    <label className="block text-gray-700 font-bold mb-2" htmlFor="service">
-                                        Service
+                                    <label className="block text-gray-700 font-bold mb-2" htmlFor="course">
+                                        Service<span className='text-red-500'>*</span>
                                     </label>
                                     <select
                                         className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                                        id="service" name="service">
+                                        name="course" id="course" >
                                         <option value="">Select a service</option>
-                                        <option value="haircut">Rent</option>
-                                        <option value="coloring">Buying</option>
-                                        <option value="styling">Order</option>
-                                        <option value="facial">Others</option>
+                                        <option value="Rent">Rent</option>
+                                        <option value="Buying">Buying</option>
+                                        <option value="Order">Order</option>
+                                        <option value="Others">Others</option>
                                     </select>
+                                    <ValidationError
+                                        prefix="Course"
+                                        field="Course"
+                                        errors={state.errors}
+                                    />
                                 </div>
                                 <div className="mb-4">
                                     <label className="block text-gray-700 font-bold mb-2" htmlFor="message">
                                         Message
                                     </label>
                                     <textarea
+                                        id="message"
+                                        name="message"
                                         className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                                        id="message" rows="4" placeholder="Enter any additional information"></textarea>
+                                        rows="3"
+                                        cols="50"
+                                        placeholder="Enter any additional information"
+
+                                    />
+                                    <ValidationError
+                                        prefix="message"
+                                        field="message"
+                                        errors={state.errors}
+
+                                    />
                                 </div>
                                 <div className="flex items-center justify-center mb-4">
                                     <button
                                         className="bg-gray-900 text-white py-2 px-4 rounded hover:bg-gray-800 focus:outline-none focus:shadow-outline"
-                                        type="submit">
+                                        type="submit" disabled={state.submitting}>
                                         Book Appointment
                                     </button>
                                 </div>
