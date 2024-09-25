@@ -35,7 +35,6 @@ const StatsSection = () => {
   ];
 
   return (
-    <div className="h-screen dark:bg-white bg-white">
       <div className="pt-12 bg-gray-50 dark:bg-white sm:pt-20">
         <div className="max-w-screen-xl px-4 mx-auto sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
@@ -70,7 +69,6 @@ const StatsSection = () => {
           </div>
         </div>
       </div>
-    </div>
   );
 };
 

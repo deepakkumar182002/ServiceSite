@@ -164,10 +164,6 @@ export default function Homepage() {
                 </div>
             </div>
 
-            {/* <div className="flex z-10 bottom-0">
-                <Footer />
-            </div> */}
-
         </>
     )
 }

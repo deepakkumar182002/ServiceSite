@@ -6,6 +6,7 @@ import { useForm, ValidationError } from "@formspree/react";
 import Image from "next/image";
 import Navigation from "@/components/Navigation";
 import Dialog from "@/components/Dialog";
+import Footer from "@/components/Footer";
 
 export default function Contactform() {
   const [state, handleSubmit] = useForm("xblrwojo");
@@ -128,6 +129,7 @@ export default function Contactform() {
           <p>{dialogMessage}</p>
         </Dialog>
       </main>
+      <Footer />
     </>
   );
 }
