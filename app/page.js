@@ -4,6 +4,7 @@ import Navigation from "@/components/Navigation";
 import temp14 from "../public/temp14.jpg";
 import Image from "next/image";
 import { FaWhatsapp } from "react-icons/fa";
+// import Nav from "@/components/Nav";
 
 // import Image from "next/image";
 
@@ -12,6 +13,7 @@ export default function Home() {
     <>
       <main className="">
         <div className="sticky z-20 top-0 w-full">
+          {/* <Nav /> */}
           <Navigation />
         </div>
         <div className="sticky top-0 z-0">

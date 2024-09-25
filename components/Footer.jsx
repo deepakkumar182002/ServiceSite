@@ -30,10 +30,10 @@ function Footer() {
                                     <Link href="/" className="text-gray-600 hover:text-gray-800">Service</Link>
                                 </li>
                                 <li>
-                                    <Link href="/" className="text-gray-600 hover:text-gray-800">About</Link>
+                                    <Link href="/About" className="text-gray-600 hover:text-gray-800">About</Link>
                                 </li>
                                 <li>
-                                    <Link href="/" className="text-gray-600 hover:text-gray-800">Compony</Link>
+                                    <Link href="/About" className="text-gray-600 hover:text-gray-800">Compony</Link>
                                 </li>
                                 <li>
                                     <Link href="/" className="text-gray-600 hover:text-gray-800">Help</Link>
