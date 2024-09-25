@@ -39,7 +39,7 @@ const About = () => {
                         <div className="bg-gray-100 p-6 rounded-lg shadow-lg">
                             <h2 className="text-2xl font-bold mb-2">Our Services</h2>
                             <p className="text-md">
-                                Whether you're looking for a budget-friendly ride or a luxury experience, Ridewaves has got you covered. Our services include economy rides, premium cars, and more—providing flexibility and safety for every journey.
+                                Whether you&apos;re looking for a budget-friendly ride or a luxury experience, Ridewaves has got you covered. Our services include economy rides, premium cars, and more—providing flexibility and safety for every journey.
                             </p>
                         </div>
                     </div>
