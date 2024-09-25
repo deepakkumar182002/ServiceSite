@@ -1,12 +1,12 @@
 'use client'
 import React from 'react'
 import Image from 'next/image'
-import temp4 from '../public/temp4.jpg'
+import temp16 from '../public/temp16.jpg'
 import temp6 from '../public/temp6.jpg'
 import temp7 from '../public/temp7.jpg'
 import temp5 from '../public/temp5.jpg'
 import temp11 from '../public/temp11.jpg'
-import temp9 from '../public/temp9.jpg'
+import temp15 from '../public/temp15.jpg'
 import temp10 from '../public/temp10.jpg'
 import StatsSection from './StatsSection'
 import { useForm, ValidationError } from "@formspree/react";
@@ -152,10 +152,10 @@ export default function Homepage() {
                             <Image className="h-auto max-w-full rounded-lg" src={temp10} alt="Gallery image" />
                         </div>
                         <div className=" break-inside-avoid  mb-8">
-                            <Image className="h-auto max-w-full rounded-lg" src={temp4} alt="Gallery image" />
+                            <Image className="h-auto max-w-full rounded-lg" src={temp16} alt="Gallery image" />
                         </div>
                         <div className=" break-inside-avoid  mb-8">
-                            <Image className="h-auto max-w-full rounded-lg" src={temp9} alt="Gallery image" />
+                            <Image className="h-auto max-w-full rounded-lg" src={temp15} alt="Gallery image" />
                         </div>
                     </div>
                     <StatsSection />
